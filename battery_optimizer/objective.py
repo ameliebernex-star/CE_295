@@ -5,7 +5,7 @@ import pandas as pd
 
 def energy_cost(p_k, rt_price, alpha = 1):
   # p_k: power injection (MW)
-  # rt_price: real time prices ($/MWh)
+  # rt_price: real time prices ($/MWh) from data file
   # alpha: time step (hour)
   total = 0
   for k in range(len(rt_price)):
