@@ -1,0 +1,5 @@
+DoD_fraction,DoD_percent,cycles_to_EOL,EOL_capacity_fraction,chemistry,source,notes
+0.50,50,8000,0.80,LFP,"Battle Born / Life Blue datasheets (via Victron community 2024)",Typical claim for shallow cycling
+0.70,70,6000,0.80,LFP,"EVE Energy MB31 prismatic LFP cell datasheet",Industrial-grade LFP cell rating
+0.80,80,5000,0.80,LFP,"Generic LFP industry average (LanPwr 2024, Tandfonline 2024)",Median of 3000-5000 range reported
+1.00,100,4000,0.80,LFP,"PKNERGY 2024 / generic LFP literature",100% DoD reference point
