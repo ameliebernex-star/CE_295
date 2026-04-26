@@ -1,0 +1,26 @@
+parameter,value,unit,description,source
+E_max,3.916,MWh,Usable energy capacity per Megapack 2XL container (4-hour configuration),Tesla Megapack 2XL Datasheet (2023)
+P_c_max,0.979,MW,Maximum AC charging power per container,Tesla Megapack 2XL Datasheet (2023)
+P_d_max,0.979,MW,Maximum AC discharging power per container,Tesla Megapack 2XL Datasheet (2023)
+V_max_AC,505,V,Maximum AC voltage,Tesla Megapack 2XL Datasheet (2023)
+V_min_AC,380,V,Minimum AC voltage,Tesla Megapack 2XL Datasheet (2023)
+V_nom_AC,480,V,Nominal AC voltage (3-phase),Tesla Megapack 2XL Datasheet (2023)
+RTE,0.937,fraction,Round-trip AC efficiency,Tesla Megapack 2XL Datasheet (2023)
+eta_c,0.968,fraction,Charging efficiency (sqrt of RTE),Derived from RTE
+eta_d,0.968,fraction,Discharging efficiency (sqrt of RTE),Derived from RTE
+T_op,25,degC,Operating temperature (reference),Tesla Megapack 2XL Datasheet (2023)
+C_rate,0.25,1/h,Charging/discharging C-rate (P_max / E_max),Tesla Megapack 2XL Datasheet (2023)
+SOC_op_min,0.15,fraction,Operational SoC lower bound,Park et al. (2023)
+SOC_op_max,0.85,fraction,Operational SoC upper bound,Park et al. (2023)
+SOC_abs_min,0.05,fraction,Absolute SoC lower bound (safety),Park et al. (2023)
+SOC_abs_max,0.95,fraction,Absolute SoC upper bound (safety),Park et al. (2023)
+DoD_op,0.70,fraction,Operational DoD limit,Park et al. (2023)
+DoD_abs,0.90,fraction,Absolute DoD limit,Park et al. (2023)
+wohler_a,4078.0,cycles,Wohler curve scale parameter (N = a * DoD^-b),Fitted to LFP cycle-life data
+wohler_b,0.9832,dimensionless,Wohler curve shape parameter,Fitted to LFP cycle-life data
+EOL_capacity,0.80,fraction,End-of-life capacity threshold (cycles to 80% capacity),LFP industry convention
+replacement_cost_per_kWh,350,USD/kWh,Installed CAPEX of LFP utility-scale BESS,NREL ATB / Lazard LCOS 2024-2025
+replacement_cost_per_MWh,350000,USD/MWh,Same as above expressed in MWh,Derived
+n_containers,2,count,Number of individually controlled BESS containers,Project scenario (Megapack x2)
+dt,1.0,hour,Time step duration,Project scenario (matches OASIS hourly data)
+T_horizon,24,hours,Optimization horizon (midnight to midnight),Project scenario
