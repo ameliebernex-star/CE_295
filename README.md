@@ -16,16 +16,28 @@ Decision vector:
 $$\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \quad \forall \quad i \in [1,2], k \in [0, N-1]$$
 
 ### Parameters
-* time interval $\Delta t$
-* degradation rate $\alpha$ in MWh capacity lost per MWh throughput
-* temperature increase $\beta$ per MWh throughput
-* temperature decrease $\gamma$ per cooling effort · hour
-* inverter efficiency $\eta$
-* temperature degradation factor $\kappa$
-* capacity opportunity cost $\rho$
-* replacement marginal cost $\sigma$
-* baseline operating power $a$
-* cooling operating power $b$
+
+| Symbol | Representation | Units | Assigned Value |
+| :--- | :--- | :--- | :--- |
+| $N$ | number of time steps | dimensionless | $24$ |
+| $I$ | number of containers | dimensionless | $2$ |
+| $\Delta t$ | time interval | hr | $1.0$ |
+| $\alpha$ | degradation rate | MWh cap. lost / MWh throughput | $2.61 \times 10^{-5}$ |
+| $\beta$ | temperature increase per MWh throughput | °C / MWh throughput | $2.5$ |
+| $\gamma$ | temperature decrease | °C / hr | $3.0$ |
+| $\eta$ | inverter efficiency | dimensionless | $0.968$ |
+| $\kappa$ | temperature degradation factor | 1 / °C | $0.04$ |
+| $\rho$ | capacity opportunity cost | $ / MWh cap. lost | $19,500$ |
+| $\sigma$ | replacement marginal cost | $ / MWh cap. lost | $200,000$ |
+| $a$ | minimum operating power | MW | $0.01$ |
+| $b$ | cooling operating power | MW | $0.04$ |
+| $T_\text{min}$ | minimum operating temperature | °C | $-30$ |
+| $T_\text{ref}$ | reference operating temperature | °C | $25$ |
+| $T_\text{max}$ | maximum operating temperature | °C | $50$ |
+| $\text{SoC}_\text{min}$ | minimum allowed State-of-Charge | dimensionless | $0.05$ |
+| $\text{SoC}_\text{max}$ | maximum allowed State-of-Charge | dimensionless | $0.95$ |
+| $Q_\text{new}$ | capacity of new container | MWh | $3.916$ |
+| $P_\text{max}$ | maximum power setpoint | MW | $0.979$ |
 
 ### Exogenous inputs
 * expected value of real-time market price of electricity $\mathbb{E}[\lambda(k)]$
