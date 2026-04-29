@@ -24,7 +24,7 @@ Decision vector: $\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \, \forall \, i \in [1
 * cooling operating power $b$
 
 ### Exogenous inputs
-* real-time market price of electricity $\lambda(k)$
+* expected value of real-time market price of electricity $\mathbb{E}[\lambda(k)]$
 
 ### State dynamics
 * $E_i(k+1)=E_i(k)+\eta c_i(k) \Delta t-\frac{1}{\eta}d_i(k)\Delta t$
@@ -34,12 +34,13 @@ Decision vector: $\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \, \forall \, i \in [1
 
 ### Objective function
 $$\min_{\vec{x},\vec{u}} J = \sum_{i=1}^2 \Bigg[C_N+ \sum_{k=0}^{N-1}  C_\text{arb}(k) + C_\text{oper}(k) + C_\text{repl}(k) + C_\text{opp}(k) \Bigg]$$
+
 where
 
-* arbitrage cost $C_\text{arb} = \lambda(k) \big(c_i(k)-d_i(k)\big)\Delta t$
-* operating cost $C_\text{oper} = \lambda(k) \big(a+bu(k)\big)\Delta t$
-* replacement marginal cost $C_\text{repl} = \sigma\big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\big)$
-* capacity opportunity cost $C_\text{opp} = \rho\big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\big)$
+* arbitrage cost $C_\text{arb} = \mathbb{E}[\lambda(k)] \big(c_i(k)-d_i(k)\big)\Delta t$
+* operating cost $C_\text{oper} = \mathbb{E}[\lambda(k)] \big(a+bu(k)\big)\Delta t$
+* replacement marginal cost $C_\text{repl} = \sigma\Big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\Big)$
+* capacity opportunity cost $C_\text{opp} = \rho\Big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\Big)$
 * terminal cost $C_N = \begin{cases} 0, & E_i(N) \ge \text{SoC}_N\cdot Q_i(N) \\ \infty, & E_i(N) \lt \text{SoC}_N\cdot Q_i(N) \end{cases}$
 
 ### Initial conditions
@@ -49,10 +50,10 @@ where
 
 ### Boundary conditions
 * Capacity must be non-negative: $Q_i(k) \ge 0$
-* Energy operating limits: $\text{SoC}_\text{min}\cdot Q_i(k) \le E_i(k) \le \text{SoC}_\text{max}\cdot Q_i(k)$
+* Energy operating limits: $\text{SoC}_\text{min}\cdot Q_i(k)\le E_i(k)\le\text{SoC}_\text{max}\cdot Q_i(k)$
 * Temperature operating limits: $T_\text{min} \le T_i(k) \le T_\text{max}$
 * Charging and discharging power setpoints must be non-negative can't exceed hard cap: $0 \le c_i(k),d_i(k) \le P_\text{max}$
-* $0 \le u_i(k) \le 1$
+* Cooling effort bounds: $0 \le u_i(k) \le 1$
 
 ### Terminal conditions
 Captured by terminal cost.
