@@ -29,8 +29,8 @@ $$\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \quad \forall \quad i \in [1,2], k \in
 | $\kappa$ | temperature degradation factor | 1 / °C | $0.04$ |
 | $\rho$ | capacity opportunity cost | $ / MWh cap. lost | $19,500$ |
 | $\sigma$ | replacement marginal cost | $ / MWh cap. lost | $200,000$ |
-| $a$ | minimum operating power | MW | $0.01$ |
-| $b$ | cooling operating power | MW | $0.04$ |
+| $a$ | minimum auxiliary power | MW | $0.01$ |
+| $b$ | cooling auxiliary power | MW | $0.04$ |
 | $T_\text{min}$ | minimum operating temperature | °C | $-30$ |
 | $T_\text{ref}$ | reference operating temperature | °C | $25$ |
 | $T_\text{max}$ | maximum operating temperature | °C | $50$ |
