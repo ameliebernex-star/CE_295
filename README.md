@@ -29,8 +29,8 @@ $$\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \quad \forall \quad i \in [1,2], k \in
 | $\kappa$ | temperature degradation factor | 1 / °C | $0.04$ |
 | $\rho$ | capacity opportunity cost | $ / MWh cap. lost | $19,500$ |
 | $\sigma$ | replacement marginal cost | $ / MWh cap. lost | $200,000$ |
-| $a$ | minimum auxiliary power | MW | $0.01$ |
-| $b$ | cooling auxiliary power | MW | $0.04$ |
+| $a$ | minimum auxiliary power percentage | dimensionless | $0.02$ |
+| $b$ | cooling auxiliary power percentage | dimensionless | $0.02$ |
 | $T_\text{min}$ | minimum operating temperature | °C | $-30$ |
 | $T_\text{ref}$ | reference operating temperature | °C | $25$ |
 | $T_\text{max}$ | maximum operating temperature | °C | $50$ |
@@ -54,7 +54,7 @@ $$\min_{\vec{x},\vec{u}} J = \sum_{i=1}^2 \Bigg[C_N+ \sum_{k=0}^{N-1}  C_\text{a
 where
 
 * arbitrage cost $C_\text{arb} = \mathbb{E}[\lambda(k)] \big(c_i(k)-d_i(k)\big)\Delta t$
-* operating cost $C_\text{oper} = \mathbb{E}[\lambda(k)] \big(a+bu(k)\big)\Delta t$
+* operating cost $C_\text{oper} = \mathbb{E}[\lambda(k)] \big(a+bu(k)\big)P_\text{max}\Delta t$
 * replacement marginal cost $C_\text{repl} = \sigma\Big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\Big)$
 * capacity opportunity cost $C_\text{opp} = \rho\Big(\alpha\phi\big(c_i(k)+d_i(k)\big)\Delta t\Big)$
 * terminal cost $C_N = \quad 0 \text{ for } E_i(N) \ge \text{SoC}_N\cdot Q_i(N), \quad \infty \text{ for } E_i(N) \lt \text{SoC}_N\cdot Q_i(N)$
