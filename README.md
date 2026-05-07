@@ -28,7 +28,7 @@ $$\vec{u} = [c_i(k), d_i(k), u_i(k)]^\top \quad \forall \quad i \in [1,2], k \in
 | $\eta$ | inverter efficiency | dimensionless | $0.968$ |
 | $\kappa$ | temperature degradation factor | 1 / °C | $0.04$ |
 | $\rho$ | capacity opportunity cost | $ / MWh cap. lost | $19,500$ |
-| $\sigma$ | replacement marginal cost | $ / MWh cap. lost | $200,000$ |
+| $\sigma$ | replacement marginal cost | $ / MWh cap. lost | $241,000$ |
 | $a$ | minimum auxiliary power percentage | dimensionless | $0.02$ |
 | $b$ | cooling auxiliary power percentage | dimensionless | $0.02$ |
 | $T_\text{min}$ | minimum operating temperature | °C | $-30$ |
@@ -73,3 +73,23 @@ where
 
 ### Terminal conditions
 Captured by terminal cost.
+
+## Results
+| | |
+| :---: | :---: |
+| ![Winter](img/winter.png) | ![Spring](img/spring.png) |
+| ![Summer](img/summer.png) | ![Autumn](img/autumn.png) |
+
+
+| Metric | Aging-aware EMS | Aging-agnostic EMS |
+| :- | :-: | :-: |
+| Time to 80% SoH (days) | 4,836 | 3,102 |
+| Time to 80% SoH (years) | 13.25 | 8.50 |
+| Revenue (USD) | $976,498.51 | $845,963.73 |
+| Charging cost (USD) | $314,713.99 | $402,298.42 |
+| Operational cost (USD) | $103,736.40 | $69,710.85 |
+| Degradation opportunity cost (USD) | $15,532.17 | $15,380.23 |
+| Degradation replacement cost (USD) | $191,961.74 | $190,083.87 |
+| **Net profit (USD)** | **$350,554.20** | **$168,490.35** |
+
+![Revenue](img/revenue_comparison.png)
